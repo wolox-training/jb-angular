@@ -1,12 +1,19 @@
 .book-container {
-  border: 1px solid $light-gray;
+  display: flex;
+  margin: 20px;
+}
+
+.book-cover {
+  height: 368px;
+  width: 261px;
+}
+
+.book-information {
   display: flex;
   flex-direction: column;
-  height: 195px;
+  height: 220px;
   justify-content: space-between;
-  margin: 15px;
-  padding: 10px;
-  width: 300px;
+  padding: 0 40px;
 }
 
 .book-title {
