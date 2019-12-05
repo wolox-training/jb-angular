@@ -1,11 +1,19 @@
 .book-container {
+  background-color: $white;
+  box-shadow: 6px 6px 5px rgba($black, 0.4);
   display: flex;
+  left: 50%;
   margin: 20px;
+  padding: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
 }
 
 .book-cover {
-  height: 368px;
-  width: 261px;
+  height: 340px;
+  width: 240px;
 }
 
 .book-information {
@@ -20,6 +28,15 @@
   font-size: $text-big;
   font-weight: bold;
   padding-bottom: 30px;
+  &::after {
+    background-color: $light-green;
+    content: '';
+    height: 4px;
+    left: 38%;
+    position: absolute;
+    top: 70px;
+    width: 450px;
+  }
 }
 
 .book-gender {
