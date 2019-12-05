@@ -3,7 +3,6 @@
   box-shadow: 6px 6px 5px rgba($black, 0.4);
   display: flex;
   left: 50%;
-  margin: 20px;
   padding: 25px;
   position: absolute;
   top: 50%;
@@ -19,24 +18,28 @@
 .book-information {
   display: flex;
   flex-direction: column;
-  height: 220px;
-  justify-content: space-between;
   padding: 0 40px;
+  width: 100%;
 }
 
 .book-title {
   font-size: $text-big;
   font-weight: bold;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+  position: relative;
   &::after {
     background-color: $light-green;
     content: '';
-    height: 4px;
-    left: 38%;
+    height: 3px;
+    left: 0;
     position: absolute;
-    top: 70px;
-    width: 450px;
+    top: 40px;
+    width: 100%;
   }
+}
+
+.book-property {
+  padding-bottom: 6px;
 }
 
 .book-gender {
