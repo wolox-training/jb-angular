@@ -1,0 +1,28 @@
+.navbar {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 6px 6px 5px rgba($black, 0.4);
+  display: flex;
+  height: $nav-height;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  &::before {
+    background-color: $light-blue;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.navbar-logo {
+  height: $nav-logo-height;
+}
+
+.navbar-title {
+  font-size: $text-medium;
+}
