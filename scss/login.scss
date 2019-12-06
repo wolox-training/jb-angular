@@ -1,0 +1,64 @@
+.login-container {
+  background-color: $white-smoke;
+  border-top: 8px solid $light-blue;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-width: 320px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.logo-wolox {
+  align-self: center;
+  height: 60px;
+  margin: 20px 0;
+  width: 182px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 40px 20px;
+}
+
+.login-label {
+  padding-bottom: 10px;
+}
+
+.login-input {
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 10px;
+  width: 100%;
+}
+
+.login-button {
+  background-color: $light-green;
+  border-radius: 8px;
+  color: $white;
+  padding: 10px;
+  position: relative;
+  &::after {
+    background-color: $light-gray;
+    content: '';
+    height: 2px;
+    left: 0;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+  }
+}
+
+.login-sign-up {
+  border: 2px solid $light-green;
+  border-radius: 8px ;
+  color: $light-green;
+  margin-top: 36px;
+  padding: 10px;
+  position: relative;
+}
