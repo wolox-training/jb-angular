@@ -15,6 +15,18 @@
   width: 240px;
 }
 
+.redirect {
+  font-size: $text-medium;
+  left: 18%;
+  margin-top: 10%;
+  position: relative;
+  &::before {
+    content: url(./assets/images/back.png);
+    position: absolute;
+    right: 44px;
+  }
+}
+
 .book-cover-image {
   background: url(./assets/images/book-cover.png) no-repeat;
   background-size: 100%;
