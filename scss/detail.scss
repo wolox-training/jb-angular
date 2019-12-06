@@ -10,11 +10,6 @@
   width: 800px;
 }
 
-.book-cover {
-  height: 340px;
-  width: 240px;
-}
-
 .redirect {
   font-size: $text-medium;
   left: 18%;
@@ -88,4 +83,30 @@
 .book-property-content {
   color: $gray;
   font-size: $text-paragraph;
+}
+
+@media screen and (max-width: $break-medium) {
+  .book-container {
+    flex-direction: column;
+    max-width: 45%;
+    padding: 25px;
+    width: 100%;
+  }
+
+  .book-cover-image {
+    align-self: center;
+    width: 245px;
+  }
+
+  .book-title {
+    margin-top: 20px;
+  }
+
+  .book-information {
+    padding: 0;
+  }
+
+  .redirect {
+    margin-top: 90vh;
+  }
 }
