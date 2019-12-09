@@ -22,8 +22,8 @@
   position: relative;
   &::before {
     content: url(./assets/images/back.png);
-    left: -25px;
     position: absolute;
+    right: 46px;
   }
 }
 
