@@ -18,6 +18,7 @@
     bottom: 28%;
     content: '';
     height: 503px;
+    left: 0;
     position: absolute;
     transform: translate(0, 85%);
     width: 100%;
@@ -67,8 +68,4 @@
     position: absolute;
     width: 100%;
   }
-}
-
-.content-active {
-  display: none;
 }
