@@ -1,0 +1,23 @@
+<div class="currency-header">
+  <div class="cell-header">Nombre</div>
+  <div class="cell-header">Precio</div>
+  <div class="cell-header">Criptomoneda</div>
+  <div class="cell-header">Convertir</div>
+</div>
+
+<div class="scrollbar">
+  <div class="item-list" *ngFor="let price of prices">
+    <div class="cell">
+      <span class="cell-value">{{ price.name }}</span>
+    </div>
+    <div class="cell">
+      <span class="cell-value">{{ price.price }}</span>
+    </div>
+    <div class="cell">
+      <span class="cell-value">{{ price.crypto }}</span>
+    </div>
+    <div class="cell">
+      <span class="cell-value">info 2</span>
+    </div>
+  </div>
+</div>

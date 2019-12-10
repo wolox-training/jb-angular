@@ -4,7 +4,9 @@
       <div class="item-menu" [ngClass]="{'menu-active': isActive == 1}" (click)="isActive=1">realizar cambio</div>
       <div class="item-menu" [ngClass]="{'menu-active': isActive != 1}" (click)="isActive=2">listado de monedas</div>
     </div>
-    <div *ngIf="isActive != 1">content 1</div>
-    <div *ngIf="isActive == 1">content 2</div>
+    <div *ngIf="isActive == 1">content 1</div>
+    <div *ngIf="isActive != 1">
+      <app-currency-list></app-currency-list>
+    </div>
   </div>
 </div>

@@ -1,0 +1,40 @@
+@import '../../../scss/variables/colors';
+@import '../../../scss/variables/fonts';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 100px;
+}
+
+.currency-header {
+  box-shadow: 2px 2px 5px 1px $light-gray;
+  color: $tabs-color;
+  display: grid;
+  font-size: $text-currency;
+  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+  padding: 30px 20px;
+}
+
+.scrollbar {
+  height: 620px;
+  overflow-y: scroll;
+}
+
+.item-list {
+  align-items: center;
+  border: 0.5px solid $light-gray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+  margin: 15px 0;
+  padding: 15px 20px;
+
+  & * {
+    font-family: Exo;
+  }
+
+  &:hover {
+    background: lighten($light-gray, 5%);
+  }
+}
