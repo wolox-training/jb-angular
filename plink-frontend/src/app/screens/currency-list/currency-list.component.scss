@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 100px;
+}
+
+.currency-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+}
+
+.currency-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+}
+
+.image-shuffle {
+  cursor: pointer;
+  width: 25px;
+}
