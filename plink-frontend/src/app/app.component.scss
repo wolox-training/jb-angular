@@ -1,0 +1,71 @@
+@import '../scss/variables/colors';
+@import '../scss/variables/fonts';
+
+.container {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 115vh;
+  margin: 0 auto;
+  max-width: 85%;
+  position: relative;
+  width: 100%;
+  &::after {
+    background: url(../../src/assets/footer.png) no-repeat;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    bottom: 28%;
+    content: '';
+    height: 503px;
+    left: 0;
+    position: absolute;
+    transform: translate(0, 85%);
+    width: 100%;
+  }
+}
+
+.list-container {
+  align-self: center;
+  background-color: $white;
+  border: 1.4px solid $light-gray;
+  border-radius: 4px;
+  height: 95%;
+  margin-top: 90px;
+  width: 86%;
+  z-index: 1;
+}
+
+.menu {
+  border-bottom: 1px solid $light-gray;
+  display: flex;
+}
+
+.item-menu {
+  color: $tabs-color;
+  cursor: pointer;
+  font-size: $text-tabs;
+  height: 100%;
+  line-height: 1;
+  padding: 78px 0 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.menu-active {
+  color: $blue;
+  font-size: $text-tabs;
+  font-weight: 900;
+  line-height: 1;
+  position: relative;
+  &::after {
+    border-bottom: 8px solid $blue;
+    bottom: 0;
+    content: '';
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
