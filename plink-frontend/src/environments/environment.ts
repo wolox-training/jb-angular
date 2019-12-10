@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ROOT_URL: 'https://bravenewcoin-v1.p.rapidapi.com',
+  RAPID_API_HOST: 'bravenewcoin-v1.p.rapidapi.com',
+  RAPID_API_KEY: '9f338e8f57msh3c2d31501a8cd23p1b9fe6jsnd52601e97653',
 };
 
 /*
