@@ -1,13 +1,15 @@
 <div class="currency-header">
-  <div>Nombre</div>
-  <div>Precio</div>
-  <div>Criptomoneda</div>
-  <div>Convertir</div>
+  <div class="text-left">Nombre</div>
+  <div class="text-left">Precio</div>
+  <div class="text-center">Criptomoneda</div>
+  <div class="text-center">Convertir</div>
 </div>
 
-<div class="currency-list" *ngFor="let price of prices">
-  <div>{{ price.name }}</div>
-  <div>{{ price.price }}</div>
-  <div>{{ price.crypto }}</div>
-  <div><img class="image-shuffle" src="../../../assets/shuffle.png" alt=""></div>
+<div class="scrollbar">
+  <div class="currency-list" *ngFor="let price of prices">
+    <div class="currency-item">{{ price.name }}</div>
+    <div class="currency-item cell-price">${{ price.price | number : '1.2' }}</div>
+    <div class="currency-item cell-crypto" [ngClass]="{'crypto-green': price.crypto == 1}"></div>
+    <div class="text-center"><img class="image-shuffle" src="../../../assets/shuffle.png" alt=""></div>
+  </div>
 </div>

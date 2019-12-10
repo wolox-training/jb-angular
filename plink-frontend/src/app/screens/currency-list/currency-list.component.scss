@@ -1,3 +1,6 @@
+@import '../../../scss/variables/colors';
+@import '../../../scss/variables/fonts';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -5,16 +8,81 @@
 }
 
 .currency-header {
+  box-shadow: 0 2px 4px 0 rgba($black, 0.4);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+  grid-template-columns: 1fr 1fr 0.6fr 0.6fr;
+  padding: 30px 20px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .currency-list {
+  border: 0.5px solid rgba($light-gray, 0.5);
+  border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+  grid-template-columns: 1fr 1fr 0.6fr 0.6fr;
+  grid-template-rows: 0.1fr;
+  margin: 15px 0;
+  padding: 15px 20px;
+}
+
+.currency-item {
+  align-items: center;
+  display: flex;
 }
 
 .image-shuffle {
   cursor: pointer;
-  width: 25px;
+  width: 36px;
+}
+
+.cell-price {
+  color: $blue;
+  font-size: $text-tabs;
+  font-weight: bold;
+}
+
+@mixin baseCircle {
+  border-radius: 50%;
+  height: 16px;
+  margin: auto;
+  width: 16px;
+}
+
+@mixin basePseudo {
+  left: 25px;
+  position: absolute;
+}
+
+.cell-crypto {
+  background-color: $orange;
+  @include baseCircle;
+  position: relative;
+  &::after {
+    color: $orange;
+    content: 'NO';
+    @include basePseudo;
+    position: absolute;
+  }
+}
+
+.crypto-green {
+  background-color: $green;
+  @include baseCircle;
+  &::after {
+    color: $green;
+    content: 'SI';
+    @include basePseudo;
+  }
+}
+
+.scrollbar {
+  height: 620px;
+  overflow-y: scroll;
 }
