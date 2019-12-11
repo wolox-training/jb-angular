@@ -1,0 +1,13 @@
+<div class="currency-header">
+  <div>Nombre</div>
+  <div>Precio</div>
+  <div>Criptomoneda</div>
+  <div>Convertir</div>
+</div>
+
+<div class="currency-list" *ngFor="let price of prices">
+  <span>{{ price.name }}</span>
+  <span>{{ price.price }}</span>
+  <span>{{ price.crypto }}</span>
+  <div><img class="image-shuffle" src="../../../assets/shuffle.png" alt=""></div>
+</div>
