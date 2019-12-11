@@ -5,9 +5,11 @@
   <div class="text-center">Convertir</div>
 </div>
 
-<div class="currency-list" *ngFor="let price of prices">
-  <span>{{ price.name }}</span>
-  <span>{{ price.price }}</span>
-  <span>{{ price.crypto }}</span>
-  <div><img class="image-shuffle" src="../../../assets/shuffle.png" alt=""></div>
-</div>
+<cdk-virtual-scroll-viewport itemSize="20" class="scrolling-viewport">
+    <div *cdkVirtualFor="let price of prices" scrollToIndex="20" class="currency-list">
+      <span class="currency-item">{{ price.name }}</span>
+      <span class="currency-item cell-price">${{ price.price | number : '1.2' }}</span>
+      <span class="currency-item cell-crypto" [ngClass]="{'crypto-green': price.crypto == 1}"></span>
+      <div class="text-center"><img class="image-shuffle" src="../../../assets/shuffle.png" alt=""></div>
+    </div>
+  </cdk-virtual-scroll-viewport>
