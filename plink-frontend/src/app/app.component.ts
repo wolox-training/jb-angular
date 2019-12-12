@@ -10,6 +10,8 @@ import { Currency } from 'src/app/models/currency.model';
 export class AppComponent implements OnInit {
 
   title = 'Plink Frontend';
+  isActive: number = 2;
+  sendingCurrencyConvert: string;
   prices: Currency[] = [];
 
   constructor(private currencyService: CurrencyService) {
@@ -23,5 +25,10 @@ export class AppComponent implements OnInit {
     this.currencyService.getPrice().subscribe(({ prices }: any) => {
       this.prices = prices;
     })
+  }
+
+  getTab(data) {
+    this.isActive = data.id;
+    this.sendingCurrencyConvert = data.coin
   }
 }

@@ -22,7 +22,6 @@ export class CurrencyService {
   }
 
   getConvert(convert) {
-    console.log(convert);
     return this.http.get(`${environment.ROOT_URL}/convert?qty=${convert.value}&from=${convert.from}&to=${convert.to}`, {
       headers:
       {

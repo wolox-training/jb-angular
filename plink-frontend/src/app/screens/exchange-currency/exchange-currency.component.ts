@@ -11,6 +11,7 @@ import { Convert } from 'src/app/models/convert.model';
 export class ExchangeCurrencyComponent implements OnInit, OnChanges {
 
   @Input() prices: Currency[];
+  @Input() assignCurrency: string;
   convert: Convert = { value: 0, to: 'USD', from: 'BTC', quantity: 0 };
 
   constructor(private currencyService: CurrencyService) {
@@ -26,6 +27,7 @@ export class ExchangeCurrencyComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    this.convert.from = !this.assignCurrency ? 'BTC' : this.assignCurrency;
   }
 
   convertCurrency() {

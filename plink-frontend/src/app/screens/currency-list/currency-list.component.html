@@ -6,10 +6,13 @@
 </div>
 
 <cdk-virtual-scroll-viewport itemSize="20" class="scrolling-viewport">
-    <div *cdkVirtualFor="let price of prices" scrollToIndex="20" class="currency-list">
-      <span class="currency-item">{{ price.name }}</span>
-      <span class="currency-item cell-price">${{ price.price | number : '1.2' }}</span>
-      <span class="currency-item cell-crypto" [ngClass]="{'crypto-green': price.crypto == 1}"></span>
-      <div class="text-center"><img class="image-shuffle" src="../../../assets/shuffle.png" alt=""></div>
+  <div *cdkVirtualFor="let price of prices" scrollToIndex="20" class="currency-list">
+    <span class="currency-item">{{ price.name }}</span>
+    <span class="currency-item cell-price">${{ price.price | number : '1.2' }}</span>
+    <span class="currency-item cell-crypto" [ngClass]="{'crypto-green': price.crypto == 1}"></span>
+    <div class="text-center">
+      <img class="image-shuffle" src="../../../assets/shuffle.png" alt="shuffle"
+        (click)="redirectConvert(price.id_currency)">
     </div>
-  </cdk-virtual-scroll-viewport>
+  </div>
+</cdk-virtual-scroll-viewport>
