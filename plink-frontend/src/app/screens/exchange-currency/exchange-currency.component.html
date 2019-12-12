@@ -11,13 +11,13 @@
     <div class="wrapper-select">
       <span class="select-icon"></span>
       <select name="" id="" class="exchange-select">
-        <option value="" class="option-select">BTC</option>
+        <option *ngFor="let price of prices" class="option-select">{{ price.id_currency }}</option>
       </select>
     </div>
     <div class="wrapper-select">
       <span class="select-icon"></span>
       <select name="" id="" class="exchange-select">
-        <option value="" class="option-select">BTC</option>
+        <option *ngFor="let price of prices" class="option-select">{{ price.id_currency }}</option>
       </select>
     </div>
     <div class="wrapper-input disabled">

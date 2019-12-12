@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrencyService } from 'src/app/services/currency.service';
+import { Currency } from 'src/app/models/currency.model';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Plink Frontend';
 
-  constructor() {
+  title = 'Plink Frontend';
+  prices: Currency[] = [];
+
+  constructor(private currencyService: CurrencyService) {
   }
 
   ngOnInit() {
+    this.getPrices();
+  }
+
+  getPrices() {
+    this.currencyService.getPrice().subscribe(({ prices }: any) => {
+      this.prices = prices;
+    })
   }
 }
