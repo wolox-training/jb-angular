@@ -34,14 +34,18 @@
 .exchange-icon {
   align-items: center;
   display: flex;
-  height: 500px;
+  height: 400px;
   justify-content: center;
+  position: relative;
   width: 35px;
 }
 
 .img-exchange {
-  height: 25;
-  width: 29px;
+  cursor: pointer;
+  object-fit: cover;
+  position: absolute;
+  top: 248px;
+  width: 30px;
 }
 
 .wrapper-input {
@@ -61,13 +65,23 @@
   top: 17px;
 }
 
-.exchange-input {
+@mixin baseInput {
   color: $nobel;
   font-size: $text-tabs;
   height: 48px;
   padding-left: 14px;
   text-align: center;
   width: 85%;
+}
+
+.exchange-input {
+  @include baseInput;
+}
+
+.exchange-input-quantity {
+  background: $light-gray;
+  @include baseInput;
+  opacity: 0.8;
 }
 
 .wrapper-select {

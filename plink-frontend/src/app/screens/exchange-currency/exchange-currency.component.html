@@ -6,25 +6,28 @@
     </div>
     <div class="wrapper-input">
       <span class="input-icon">$</span>
-      <input type="text" class="exchange-input">
+      <input type="number" class="exchange-input" [(ngModel)]="convert.value" (keydown.enter)="convertCurrency()">
     </div>
     <div class="wrapper-select">
       <span class="select-icon"></span>
-      <select name="" id="" class="exchange-select">
+      <select [(ngModel)]="convert.from" class="exchange-select" (change)="convertCurrency()">
         <option *ngFor="let price of prices" class="option-select">{{ price.id_currency }}</option>
       </select>
     </div>
     <div class="wrapper-select">
       <span class="select-icon"></span>
-      <select name="" id="" class="exchange-select">
-        <option *ngFor="let price of prices" class="option-select">{{ price.id_currency }}</option>
+      <select [(ngModel)]="convert.to" class="exchange-select" (change)="convertCurrency()">
+        <option *ngFor="let price of prices" [selected]="price.id_currency === 'USD'" class="option-select">
+          {{ price.id_currency }}</option>
       </select>
     </div>
     <div class="wrapper-input disabled">
       <span class="input-icon">$</span>
+      <input type="number" class="exchange-input-quantity" [(ngModel)]="convert.quantity"
+        (keydown.enter)="convertCurrency()">
     </div>
   </div>
   <div class="exchange-icon">
-    <img class="img-exchange" src="../../../assets/exchange.png" alt="">
+    <img class="img-exchange" src="../../../assets/exchange.png" alt="" (click)="changeSelect()">
   </div>
 </div>

@@ -20,4 +20,15 @@ export class CurrencyService {
       }
     });
   }
+
+  getConvert(convert) {
+    console.log(convert);
+    return this.http.get(`${environment.ROOT_URL}/convert?qty=${convert.value}&from=${convert.from}&to=${convert.to}`, {
+      headers:
+      {
+        'x-rapidapi-host': environment.RAPID_API_HOST,
+        'x-rapidapi-key': environment.RAPID_API_KEY
+      }
+    });
+  }
 }

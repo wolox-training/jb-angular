@@ -11,13 +11,11 @@ export class CurrencyListComponent implements OnInit, OnChanges {
   @Input() prices: Currency;
 
   constructor() {
-
   }
 
   ngOnInit() {
   }
 
   ngOnChanges() {
-    console.log('list component', this.prices);
   }
 }
