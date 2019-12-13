@@ -22,7 +22,7 @@ export class CurrencyService {
   }
 
   getConvert(convert) {
-    return this.http.get(`${environment.ROOT_URL}/convert?qty=${convert.value}&from=${convert.from}&to=${convert.to}`, {
+    return this.http.get(`${environment.ROOT_URL}/convert?qty=${convert.amount}&from=${convert.from}&to=${convert.to}`, {
       headers:
       {
         'x-rapidapi-host': environment.RAPID_API_HOST,
