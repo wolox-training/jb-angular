@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { Currency } from 'src/app/models/currency.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Currency } from 'src/app/models/currency.model';
 export class CurrencyListComponent implements OnInit, OnChanges {
 
   @Input() prices: Currency;
+  @Output() activeTab: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
@@ -17,5 +18,9 @@ export class CurrencyListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+  }
+
+  redirectConvert(coin) {
+    this.activeTab.emit({ id: 1, coin: coin });
   }
 }
