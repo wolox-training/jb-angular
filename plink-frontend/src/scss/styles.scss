@@ -3,5 +3,25 @@
 }
 
 :root {
-  background-color: $alice-blue;
+  background-color: $light-gray;
+}
+
+h1 {
+  color: $gray;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1.71px;
+  line-height: 36px;
+}
+
+h2 {
+  color: $light-gray;
+  font-size: 22px;
+  font-weight: 100;
+  line-height: 36px;
+}
+
+.disabled {
+  background: $light-gray;
+  opacity: 0.8;
 }
