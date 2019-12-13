@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from 'src/app/services/currency.service';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Currency } from 'src/app/models/currency.model';
 
 @Component({
@@ -7,19 +6,18 @@ import { Currency } from 'src/app/models/currency.model';
   templateUrl: './currency-list.component.html',
   styleUrls: ['./currency-list.component.scss']
 })
-export class CurrencyListComponent implements OnInit {
+export class CurrencyListComponent implements OnInit, OnChanges {
 
-  prices: Currency[] = [];
+  @Input() prices: Currency;
 
-  constructor(private currencyService: CurrencyService) { }
+  constructor() {
 
-  ngOnInit() {
-    this.getPrices();
   }
 
-  getPrices() {
-    this.currencyService.getPrice().subscribe(({ prices }: any) => {
-      this.prices = prices;
-    })
+  ngOnInit() {
+  }
+
+  ngOnChanges() {
+    console.log('list component', this.prices);
   }
 }

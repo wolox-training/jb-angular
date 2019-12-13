@@ -5,10 +5,10 @@
       <div class="item-menu" [ngClass]="{'menu-active': isActive != 1}" (click)="isActive=2">listado de monedas</div>
     </div>
     <div *ngIf="isActive != 1">
-      <app-currency-list></app-currency-list>
+      <app-currency-list [prices]="prices"></app-currency-list>
     </div>
     <div *ngIf="isActive == 1">
-      <app-exchange-currency></app-exchange-currency>
+      <app-exchange-currency [prices]="prices"></app-exchange-currency>
     </div>
   </div>
 </div>
