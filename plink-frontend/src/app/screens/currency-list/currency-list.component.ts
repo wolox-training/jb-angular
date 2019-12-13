@@ -21,6 +21,6 @@ export class CurrencyListComponent implements OnInit, OnChanges {
   }
 
   redirectConvert(coin) {
-    this.activeTab.emit({ id: 1, coin: coin });
+    this.activeTab.emit({ id: 1, coin: `${coin}` });
   }
 }
