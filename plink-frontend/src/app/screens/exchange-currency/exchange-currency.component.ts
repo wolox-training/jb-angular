@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CurrencyService } from 'src/app/services/currency.service';
 import { Currency } from 'src/app/models/currency.model';
 import { Convert } from 'src/app/models/convert.model';
@@ -12,9 +13,15 @@ export class ExchangeCurrencyComponent implements OnInit, OnChanges {
 
   @Input() prices: Currency[];
   @Input() assignCurrency: string;
-  convert: Convert = { value: 0, to: 'USD', from: 'BTC', quantity: 0 };
+  exchangeForm: FormGroup;
 
   constructor(private currencyService: CurrencyService) {
+    this.exchangeForm = new FormGroup({
+      amount: new FormControl(0, [Validators.required]),
+      from: new FormControl('BTC'),
+      to: new FormControl('USD'),
+      quantity: new FormControl(),
+    });
   }
 
   ngOnInit() {
@@ -27,20 +34,18 @@ export class ExchangeCurrencyComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.convert.from = !this.assignCurrency ? 'BTC' : this.assignCurrency;
+    this.exchangeForm.patchValue({ from: !this.assignCurrency ? 'BTC' : this.assignCurrency });
   }
 
   convertCurrency() {
-    this.currencyService.getConvert(this.convert).subscribe(({ to_quantity }: any) => {
-      this.convert.quantity = to_quantity;
+    this.currencyService.getConvert(this.exchangeForm.value).subscribe(({ to_quantity }: any) => {
+      this.exchangeForm.patchValue({ quantity: to_quantity });
     })
   }
 
   changeSelect() {
-    const { to, from } = this.convert;
-    const tempTo = to;
-    this.convert.to = from
-    this.convert.from = tempTo;
+    const { from: to, to: from } = this.exchangeForm.value;
+    this.exchangeForm.patchValue({ to, from });
     this.convertCurrency();
   }
 }

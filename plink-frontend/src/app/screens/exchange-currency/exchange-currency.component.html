@@ -1,32 +1,32 @@
 <div class="exchange">
-  <div class="exchange-content">
+  <!-- <div > -->
+  <form [formGroup]="exchangeForm" class="exchange-content">
     <div class="header">
       <h1>Realizar cambio</h1>
       <h2>Seleccione las monedas</h2>
     </div>
     <div class="wrapper-input">
       <span class="input-icon">$</span>
-      <input type="number" class="exchange-input" [(ngModel)]="convert.value" (keydown.enter)="convertCurrency()">
+      <input type="number" class="exchange-input" formControlName="amount" (keydown.enter)="convertCurrency()">
     </div>
     <div class="wrapper-select">
       <span class="select-icon"></span>
-      <select [(ngModel)]="convert.from" class="exchange-select" (change)="convertCurrency()">
-        <option *ngFor="let price of prices" class="option-select">{{ price.id_currency }}</option>
+      <select class="exchange-select" formControlName="from">
+        <option *ngFor="let price of prices" [value]="price.id_currency" class="option-select">{{ price.id_currency }}</option>
       </select>
     </div>
     <div class="wrapper-select">
       <span class="select-icon"></span>
-      <select [(ngModel)]="convert.to" class="exchange-select" (change)="convertCurrency()">
-        <option *ngFor="let price of prices" [selected]="price.id_currency === 'USD'" class="option-select">
-          {{ price.id_currency }}</option>
+      <select class="exchange-select" formControlName="to">
+        <option *ngFor="let price of prices" [value]="price.id_currency" class="option-select">{{ price.id_currency }}</option>
       </select>
     </div>
     <div class="wrapper-input disabled">
       <span class="input-icon">$</span>
-      <input type="number" class="exchange-input-quantity" [(ngModel)]="convert.quantity"
-        (keydown.enter)="convertCurrency()">
+      <input type="number" class="exchange-input-quantity" formControlName="quantity">
     </div>
-  </div>
+  </form>
+  <!-- </div> -->
   <div class="exchange-icon">
     <img class="img-exchange" src="../../../assets/exchange.png" alt="" (click)="changeSelect()">
   </div>
