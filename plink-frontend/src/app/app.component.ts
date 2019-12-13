@@ -8,9 +8,8 @@ import { Currency } from 'src/app/models/currency.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   title = 'Plink Frontend';
-  isActive: number = 2;
+  isActive = 2;
   sendingCurrencyConvert: string;
   prices: Currency[] = [];
 
@@ -24,11 +23,11 @@ export class AppComponent implements OnInit {
   getPrices() {
     this.currencyService.getPrice().subscribe(({ prices }: any) => {
       this.prices = prices;
-    })
+    });
   }
 
   getTab(data) {
     this.isActive = data.id;
-    this.sendingCurrencyConvert = data.coin
+    this.sendingCurrencyConvert = data.coin;
   }
 }

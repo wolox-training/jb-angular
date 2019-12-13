@@ -2,7 +2,6 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CurrencyService } from 'src/app/services/currency.service';
 import { Currency } from 'src/app/models/currency.model';
-import { Convert } from 'src/app/models/convert.model';
 
 @Component({
   selector: 'app-exchange-currency',
@@ -40,7 +39,7 @@ export class ExchangeCurrencyComponent implements OnInit, OnChanges {
   convertCurrency() {
     this.currencyService.getConvert(this.exchangeForm.value).subscribe(({ to_quantity }: any) => {
       this.exchangeForm.patchValue({ quantity: to_quantity });
-    })
+    });
   }
 
   changeSelect() {
